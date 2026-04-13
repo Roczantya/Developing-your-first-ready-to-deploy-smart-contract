@@ -1,0 +1,22 @@
+# Secrets
+.env
+*.key
+secrets.json
+
+# Dependencies
+node_modules/
+
+# Smart Contract Artifacts
+artifacts/
+build/
+cache/
+*.dbg.json
+
+# Tool Specific (Echidna/Slither)
+corpus/
+slither-out/
+crytic-export/
+
+# OS Specific
+.DS_Store
+Thumbs.db

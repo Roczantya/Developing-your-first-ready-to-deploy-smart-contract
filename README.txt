@@ -1,0 +1,47 @@
+# AFL 2: Smart Contract Security Audit
+**Project: CommunityRewardsVault Audit & Remediation**
+
+## 📌 Executive Summary
+Repo ini berisi hasil audit keamanan mendalam pada smart contract `CommunityRewardsVault`. Audit dilakukan menggunakan tiga metodologi utama: Static Analysis, Symbolic Execution, dan Property-based Fuzzing. Semua celah kritis yang ditemukan telah berhasil diperbaiki (remediated).
+
+## 🛠️ Security Tools Used
+- **Slither:** Untuk analisis statis pola deteksi kerentanan.
+- **Mythril:** Untuk pemetaan jalur eksploitasi multi-transaksi (Symbolic Execution).
+- **Echidna:** Untuk pengujian invariant dan ketahanan terhadap fuzzing.
+
+## ⚠️ Vulnerabilities Found & Fixed
+1. **Reentrancy (High):** Memperbaiki urutan transaksi menggunakan pola *Checks-Effects-Interactions* (CEI).
+2. **Unprotected Ether Withdrawal (Critical):** Menambahkan *Access Control* menggunakan manual modifier `onlyOwner`.
+3. **Accounting Invariant Violation (Medium):** Memperbaiki sinkronisasi variabel `totalVaultValue` yang ditemukan melalui fuzzing Echidna.
+
+## 🚀 Deployment Info
+- **Network:** Sepolia Testnet
+- **Contract Address:** `MASUKKAN_ALAMAT_KONTRAK_MU_DI_SINI`
+- **Verification:** Verified on# AFL 2: Smart Contract Security Audit
+**Project: CommunityRewardsVault Audit & Remediation**
+
+## 📌 Executive Summary
+Repo ini berisi hasil audit keamanan mendalam pada smart contract `CommunityRewardsVault`. Audit dilakukan menggunakan tiga metodologi utama: Static Analysis, Symbolic Execution, dan Property-based Fuzzing. Semua celah kritis yang ditemukan telah berhasil diperbaiki (remediated).
+
+## 🛠️ Security Tools Used
+- **Slither:** Untuk analisis statis pola deteksi kerentanan.
+- **Mythril:** Untuk pemetaan jalur eksploitasi multi-transaksi (Symbolic Execution).
+- **Echidna:** Untuk pengujian invariant dan ketahanan terhadap fuzzing.
+
+## ⚠️ Vulnerabilities Found & Fixed
+1. **Reentrancy (High):** Memperbaiki urutan transaksi menggunakan pola *Checks-Effects-Interactions* (CEI).
+2. **Unprotected Ether Withdrawal (Critical):** Menambahkan *Access Control* menggunakan manual modifier `onlyOwner`.
+3. **Accounting Invariant Violation (Medium):** Memperbaiki sinkronisasi variabel `totalVaultValue` yang ditemukan melalui fuzzing Echidna.
+
+## 🚀 Deployment Info
+- **Network:** Sepolia Testnet
+- **Contract Address:** `0xcac7cfc6fa476747d1b15fc63abce8acf02fb474`
+- **Verification:** Verified on [Routescan: `https://testnet.routescan.io/tx/0x3f46f777f2d2a8cdfd9556d85f2043b1454f57bb61f70e9c0de6b9d1ca0fbdbc?chainid=11155111`]
+
+## 📝 How to Run Audit
+- Run Slither: `slither contracts/CommunityRewardsVault_Patched.sol`
+- Run Echidna: `echidna contracts/CommunityRewardsVault_Patched.sol --contract VaultTest`
+
+## 📝 How to Run Audit
+- Run Slither: `slither contracts/CommunityRewardsVault_Patched.sol`
+- Run Echidna: `echidna contracts/CommunityRewardsVault_Patched.sol --contract VaultTest`
